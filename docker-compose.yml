@@ -1,0 +1,18 @@
+version: '3.8' # Specify the Docker Compose file version
+
+services:
+  postgres:
+    image: postgres:14 # Use the official PostgreSQL image, specify the version
+    container_name: article_app # Name of the container
+    environment:
+      POSTGRES_USER: rush # User
+      POSTGRES_PASSWORD: Rushabh123! # Password
+      POSTGRES_DB: nest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persist data even after the container is stopped
+    ports:
+      - '5434:5432' # Map PostgreSQL port to the host machine
+
+volumes:
+  postgres_data:
+    driver: local
