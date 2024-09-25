@@ -51,3 +51,55 @@ This is a blogging platform API built using NestJS, TypeORM, PostgreSQL, and AWS
    git clone <repository-url>
    cd blogging_platform_api
    ```
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+Set up the Docker container for PostgreSQL: Make sure you have Docker installed. In the project root, create a docker-compose.yml file with the following content:
+```yml
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
+      POSTGRES_DB: your_db_name
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+```
+
+AWS S3 Setup
+To use AWS S3 for file storage:
+
+Create an AWS account if you don't have one.
+
+Create an S3 Bucket:
+
+Go to the S3 service in your AWS Management Console.
+Click on "Create bucket" and follow the prompts.
+Make sure to uncheck "Block all public access" if you want your files to be publicly accessible.
+Get AWS Credentials:
+
+Go to the IAM service in your AWS Management Console.
+Create a new user with programmatic access.
+Attach the policy AmazonS3FullAccess to the user.
+Note down the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+Update your .env file with the S3 bucket name and your AWS credentials.
+
+Usage
+CRUD Operations: Use the API endpoints to create, read, update, and delete articles. The articles support file uploads to S3.
+
+Postman: You can use Postman or any other API client to interact with the API.
+
+Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
