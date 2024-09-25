@@ -56,11 +56,7 @@ $ pnpm run test:e2e
 
 # test coverage
 $ pnpm run test:cov
-```
 
-Here’s your README content formatted as a markdown script:
-
-```markdown
 # Blogging Platform API
 
 This is a blogging platform API built using NestJS, TypeORM, PostgreSQL, and AWS S3 for file storage. The API provides CRUD operations for articles, allowing users to create, read, update, and delete articles, along with file uploads.
@@ -89,16 +85,16 @@ This is a blogging platform API built using NestJS, TypeORM, PostgreSQL, and AWS
    ```bash
    git clone <repository-url>
    cd blogging_platform_api
-   ```
+   
 
 2. **Install dependencies**:
-   ```bash
+   bash
    pnpm install
-   ```
+   
 
 3. **Set up the Docker container** for PostgreSQL:
    Make sure you have Docker installed. In the project root, create a `docker-compose.yml` file with the following content:
-   ```yaml
+   yaml
    version: '3.8'
 
    services:
@@ -128,24 +124,24 @@ This is a blogging platform API built using NestJS, TypeORM, PostgreSQL, and AWS
    AWS_ACCESS_KEY_ID=your_access_key_id
    AWS_SECRET_ACCESS_KEY=your_secret_access_key
    AWS_REGION=your_region
-   ```
+  
 
 ## Running the Application
 
 1. **Start the Docker container**:
-   ```bash
+   bash
    pnpm run docker:restart
-   ```
+
 
 2. **Build the application**:
-   ```bash
+   bash
    pnpm run build
-   ```
+   
 
 3. **Run the application**:
-   ```bash
+   bash
    pnpm run start:dev
-   ```
+   
 
 4. The API should now be running on `http://localhost:3300`.
 
